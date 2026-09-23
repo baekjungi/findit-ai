@@ -33,23 +33,6 @@ Azure App Service(Linux, Node 20, F1 무료 요금제)에 배포되어 있습니
 
 배포 설정은 [azure.yaml](azure.yaml), [infra/main.bicep](infra/main.bicep), [infra/resources.bicep](infra/resources.bicep)에서 확인할 수 있습니다.
 
-## 시작하기
-
-### 요구사항
-
-- Node.js 20 이상
-- Azure OpenAI 리소스와 Chat Completions 모델 배포
-
-### 설치 및 실행
-
-```powershell
-npm install
-Copy-Item .env.example .env
-npm start
-```
-
-브라우저에서 `http://localhost:3000`을 엽니다.
-
 ### 환경변수
 
 `.env`에 Azure OpenAI 정보를 입력합니다. `.env`는 Git에 커밋하지 않습니다.
