@@ -1,0 +1,8 @@
+name: findit-ai
+metadata:
+  template: findit-ai@0.0.1
+services:
+  web:
+    project: .
+    host: appservice
+    language: js

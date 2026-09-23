@@ -1,0 +1,15 @@
+{
+  "name": "findit-ai",
+  "version": "0.1.0",
+  "private": true,
+  "description": "FindIt AI - 자연어로 상품을 찾아주는 AI 커머스 검색 MVP",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "cheerio": "^1.2.0",
+    "dotenv": "^16.4.5",
+    "express": "^5.2.1"
+  }
+}

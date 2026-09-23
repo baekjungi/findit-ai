@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>FindIt AI — 말만 하면 찾아주는 AI 커머스</title>
+<link href="https://fonts.googleapis.com" rel="preconnect" />
+<link crossorigin href="https://fonts.gstatic.com" rel="preconnect" />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: {
+          sans: ["Plus Jakarta Sans", "Pretendard", "-apple-system", "sans-serif"],
+        },
+        colors: {
+          primary: "#2563eb",
+          "primary-container": "#eef2ff",
+          secondary: "#4f46e5",
+          tertiary: "#06b6d4",
+          "tertiary-container": "#ecfeff",
+          surface: "#f8fafc",
+          "surface-container-lowest": "#ffffff",
+          "surface-container-low": "#f1f5f9",
+          "surface-container": "#e2e8f0",
+          "on-surface": "#0f172a",
+          "on-surface-variant": "#475569",
+          outline: "#94a3b8",
+          "outline-variant": "#e2e8f0",
+          error: "#e11d48",
+          "on-error": "#ffffff",
+        },
+        spacing: {
+          "space-xxs": "0.25rem",
+          "space-xs": "0.5rem",
+          "space-sm": "0.75rem",
+          "space-md": "1rem",
+          "space-lg": "1.5rem",
+          "space-xl": "2rem",
+          "space-2xl": "3rem",
+          "gutter-desktop": "1.5rem",
+          "catalog-max-width": "72rem",
+        },
+        fontSize: {
+          "display-hero": ["36px", { lineHeight: "46px", fontWeight: "800" }],
+          "headline-lg": ["26px", { lineHeight: "34px", fontWeight: "700" }],
+          "headline-md": ["19px", { lineHeight: "26px", fontWeight: "700" }],
+          "headline-sm": ["16px", { lineHeight: "22px", fontWeight: "700" }],
+          "body-lg": ["16px", { lineHeight: "26px" }],
+          "body-md": ["14px", { lineHeight: "22px" }],
+          "body-sm": ["13px", { lineHeight: "18px" }],
+          "label-md": ["12px", { lineHeight: "16px", fontWeight: "600" }],
+          "label-sm": ["11px", { lineHeight: "14px", fontWeight: "700" }],
+          "price-xl": ["24px", { lineHeight: "30px", fontWeight: "800" }],
+        },
+      },
+    },
+  };
+</script>
+<style>
+  ::-webkit-scrollbar { display: none; }
+  .price-num { font-variant-numeric: tabular-nums; }
+</style>
+</head>
+<body class="bg-surface text-on-surface font-sans">
+
+<!-- Header -->
+<header class="border-b border-outline-variant bg-surface-container-lowest">
+  <div class="max-w-catalog-max-width mx-auto px-gutter-desktop py-space-sm flex items-center justify-between">
+    <div class="flex items-center gap-2">
+      <svg width="34" height="34" viewBox="0 0 44 44" fill="none">
+        <defs>
+          <linearGradient id="findit-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#2563EB" /><stop offset="50%" stop-color="#4F46E5" /><stop offset="100%" stop-color="#06B6D4" />
+          </linearGradient>
+        </defs>
+        <rect x="2" y="4" width="36" height="36" rx="10" fill="url(#findit-grad)"/>
+        <circle cx="18" cy="20" r="7.5" stroke="#FFFFFF" stroke-width="2.6" stroke-linecap="round"/>
+        <path d="M23.5 25.5L30 32" stroke="#FFFFFF" stroke-width="2.8" stroke-linecap="round"/>
+        <path d="M26 11C26 13.5 24 14.5 24 14.5C24 14.5 26 15.5 26 18C26 15.5 28 14.5 28 14.5C28 14.5 26 13.5 26 11Z" fill="#FFFFFF"/>
+      </svg>
+      <span class="font-extrabold text-lg tracking-tight">FindIt <span class="text-primary">AI</span></span>
+    </div>
+    <span class="hidden sm:inline text-body-sm text-on-surface-variant">말만 하면 찾아주는 AI 커머스</span>
+  </div>
+</header>
+
+<main class="max-w-catalog-max-width mx-auto px-gutter-desktop">
+
+  <!-- Hero & Search -->
+  <section class="pt-space-2xl pb-space-xl flex flex-col items-center text-center">
+    <div class="inline-flex items-center gap-space-xs px-space-md py-1.5 rounded-full bg-surface-container-low">
+      <span class="flex h-2 w-2 relative">
+        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+        <span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+      </span>
+      <span class="text-label-sm text-primary uppercase tracking-wide">실시간 AI 의도 분석 · 다나와 가격비교 연동</span>
+    </div>
+
+    <h1 class="text-display-hero mt-space-lg max-w-2xl">
+      말만 하면 찾아주는 <span class="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">AI 커머스</span>
+    </h1>
+    <p class="text-body-lg text-on-surface-variant mt-space-xs max-w-xl">
+      설명이 부족하고 모호해도 걱정 마세요. AI가 문맥의 숨은 니즈를 읽어 최적의 제품과 실시간 구매처까지 연결합니다.
+    </p>
+
+    <div class="w-full max-w-3xl mt-space-xl relative">
+      <div class="absolute -inset-1 bg-gradient-to-r from-primary/30 via-secondary/30 to-tertiary/30 rounded-full blur-md opacity-70"></div>
+      <form id="search-form" class="relative flex flex-col sm:flex-row items-center gap-2 bg-surface-container-lowest rounded-full p-2.5 shadow-xl" aria-label="AI 상품 검색">
+        <div class="flex-1 flex items-center w-full px-space-xs gap-space-xs">
+          <span class="material-symbols-outlined text-outline text-[22px]">search</span>
+          <input
+            id="search-input"
+            type="text"
+            class="w-full bg-transparent text-body-md placeholder:text-outline/70 focus:outline-none py-2 px-1"
+            placeholder="예: 여름에 입기 좋고 목 안 늘어나는 하얀색 오버핏 반팔티"
+            autocomplete="off"
+            aria-label="찾고 싶은 상품 설명"
+          />
+          <button id="clear-search" type="button" class="hidden text-outline hover:text-on-surface" aria-label="검색어 지우기" title="검색어 지우기">
+            <span class="material-symbols-outlined text-[20px]">close</span>
+          </button>
+        </div>
+        <button type="submit" class="w-full sm:w-auto flex items-center justify-center gap-space-xs px-space-lg py-3 rounded-full bg-gradient-to-r from-primary to-secondary text-white font-semibold hover:shadow-lg transition-all active:scale-95">
+          <span class="material-symbols-outlined text-[20px]">auto_awesome</span>
+          <span class="text-label-md text-white">AI 검색</span>
+        </button>
+      </form>
+    </div>
+
+    <div class="mt-space-lg max-w-3xl w-full flex flex-col items-center">
+      <div class="flex items-center gap-space-xs mb-2">
+        <span class="material-symbols-outlined text-[16px] text-secondary">tips_and_updates</span>
+        <span class="text-label-sm text-on-surface-variant normal-case font-medium">예시 질의어 (클릭하여 검색)</span>
+      </div>
+      <div class="flex flex-wrap justify-center gap-2">
+        <button type="button" class="tag-pill px-3.5 py-1.5 rounded-full bg-surface-container-lowest shadow-sm hover:shadow text-on-surface-variant hover:text-primary text-body-sm transition-all" data-query="여름에 입기 좋고 목 안 늘어나는 하얀색 오버핏 반팔티">🔥 목 안늘어나는 반팔티</button>
+        <button type="button" class="tag-pill px-3.5 py-1.5 rounded-full bg-surface-container-lowest shadow-sm hover:shadow text-on-surface-variant hover:text-primary text-body-sm transition-all" data-query="이어폰인데 귀 안 아프고 골전도 방식인 거 10만원 이하">🎧 골전도 이어폰</button>
+        <button type="button" class="tag-pill px-3.5 py-1.5 rounded-full bg-surface-container-lowest shadow-sm hover:shadow text-on-surface-variant hover:text-primary text-body-sm transition-all" data-query="원목 느낌인데 좁은 원룸에 어울리는 접이식 식탁">🪑 원목 접이식 식탁</button>
+        <button type="button" class="tag-pill px-3.5 py-1.5 rounded-full bg-surface-container-lowest shadow-sm hover:shadow text-on-surface-variant hover:text-primary text-body-sm transition-all" data-query="맥북 에어 들어가는 출퇴근용 방수 백팩">💻 방수 백팩</button>
+      </div>
+      <div id="recent-searches" class="hidden flex-wrap justify-center gap-2 mt-space-sm" aria-label="최근 검색어"></div>
+    </div>
+  </section>
+
+  <!-- Status (loading / error) -->
+  <section id="status" class="pb-space-lg flex flex-col items-center gap-2 text-center text-body-md text-on-surface-variant" role="status" aria-live="polite" hidden>
+    <span id="status-spinner" class="w-6 h-6 border-2 border-primary/30 border-t-primary rounded-full animate-spin"></span>
+    <span id="status-text"></span>
+  </section>
+
+  <!-- Intent Analysis Card -->
+  <section id="intent-card" class="bg-surface-container-lowest rounded-xl shadow-sm p-space-lg mb-space-lg" hidden>
+    <div class="flex items-start gap-space-sm mb-space-sm">
+      <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary shrink-0">
+        <span class="material-symbols-outlined text-[24px]">psychology</span>
+      </div>
+      <div>
+        <span class="text-label-sm text-primary uppercase tracking-wider">Natural Language Intent Deconstruction</span>
+        <p id="intent-query-text" class="text-headline-md mt-0.5"></p>
+      </div>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-space-xs pt-space-xs">
+      <div class="p-space-xs bg-surface-container-low rounded-lg">
+        <div class="flex items-center gap-1 text-on-surface-variant text-label-sm"><span class="material-symbols-outlined text-[14px]">category</span><span>카테고리</span></div>
+        <p id="intent-category" class="text-label-md text-on-surface mt-1 font-semibold truncate"></p>
+      </div>
+      <div class="p-space-xs bg-surface-container-low rounded-lg">
+        <div class="flex items-center gap-1 text-on-surface-variant text-label-sm"><span class="material-symbols-outlined text-[14px]">verified</span><span>핵심 특징</span></div>
+        <p id="intent-features" class="text-label-md text-primary mt-1 font-bold truncate"></p>
+      </div>
+      <div class="p-space-xs bg-surface-container-low rounded-lg">
+        <div class="flex items-center gap-1 text-on-surface-variant text-label-sm"><span class="material-symbols-outlined text-[14px]">dry_cleaning</span><span>목적/조건</span></div>
+        <p id="intent-purpose" class="text-label-md text-on-surface mt-1 font-semibold truncate"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Filter / Sort Bar -->
+  <div id="filter-bar" class="flex flex-wrap items-center gap-2 pb-space-xs" hidden>
+    <span id="result-count" class="mr-auto text-label-md text-on-surface-variant"></span>
+    <button type="button" class="filter-btn px-3 py-1.5 rounded-full text-label-sm font-semibold shadow-sm transition-colors" data-sort="match">
+      <span class="material-symbols-outlined text-[14px] align-middle">auto_awesome</span> 일치도 높은순
+    </button>
+    <button type="button" class="filter-btn px-3 py-1.5 rounded-full text-label-sm font-semibold shadow-sm transition-colors" data-sort="price">
+      최저가순
+    </button>
+    <button id="reset-results" type="button" class="px-3 py-1.5 rounded-full bg-surface-container-lowest text-on-surface-variant text-label-sm font-semibold shadow-sm hover:text-primary transition-colors">
+      <span class="material-symbols-outlined text-[14px] align-middle">refresh</span> 새 검색
+    </button>
+  </div>
+
+  <!-- Results -->
+  <section id="results" class="flex flex-col gap-space-md pb-space-2xl"></section>
+
+  <!-- How it works -->
+  <section class="py-space-2xl border-t border-outline-variant">
+    <div class="text-center max-w-xl mx-auto mb-space-xl">
+      <span class="text-label-sm text-primary uppercase tracking-wider">How It Works</span>
+      <h2 class="text-headline-lg mt-1">3단계 정밀 매칭 알고리즘</h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg">
+      <div class="bg-surface-container-lowest p-space-lg rounded-2xl shadow-sm">
+        <span class="px-2.5 py-1 rounded-full bg-primary-container text-primary text-label-sm font-bold">STEP 01</span>
+        <h3 class="text-headline-sm mt-space-sm">의도 추출</h3>
+        <p class="text-body-md text-on-surface-variant mt-1">LLM이 문장에서 카테고리, 핵심 특징, 목적/제약사항을 분해합니다.</p>
+      </div>
+      <div class="bg-surface-container-lowest p-space-lg rounded-2xl shadow-sm">
+        <span class="px-2.5 py-1 rounded-full bg-primary-container text-primary text-label-sm font-bold">STEP 02</span>
+        <h3 class="text-headline-sm mt-space-sm">상품 조회 &amp; 비교</h3>
+        <p class="text-body-md text-on-surface-variant mt-1">다나와 검색 결과를 실시간으로 조회하고 특징 일치도로 순위를 매깁니다.</p>
+      </div>
+      <div class="bg-surface-container-lowest p-space-lg rounded-2xl shadow-sm">
+        <span class="px-2.5 py-1 rounded-full bg-primary-container text-primary text-label-sm font-bold">STEP 03</span>
+        <h3 class="text-headline-sm mt-space-sm">가격 비교 &amp; 바로가기</h3>
+        <p class="text-body-md text-on-surface-variant mt-1">실시간 가격을 비교해 최저가 상품과 구매 링크를 보여줍니다.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="border-t border-outline-variant py-space-lg">
+  <div class="max-w-catalog-max-width mx-auto px-gutter-desktop text-center text-label-sm text-on-surface-variant normal-case">
+    <p>일부 링크를 통해 구매 시 제휴 수수료가 발생할 수 있습니다. 수집된 가격 정보는 쇼핑몰 사정에 의해 변동될 수 있습니다.</p>
+    <p class="mt-1">© 2026 FindIt AI</p>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
